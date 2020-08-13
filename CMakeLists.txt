@@ -39,5 +39,6 @@ add_executable(
     )
 target_compile_features(nsm PRIVATE cxx_std_11)
 target_link_libraries(nsm PRIVATE Threads::Threads)
+target_link_options(nsm PRIVATE -LLua-5.3/src -llua)
 target_compile_options(nsm PRIVATE -Wall -Wextra -pedantic)
-target_compile_definitions(nsm PRIVATE exprtk_disable_caseinsensitivity)
+target_compile_definitions(nsm PRIVATE exprtk_disable_caseinsensitivity __BUNDLED__ __LUA_VERSION_5_3__)

@@ -227,58 +227,58 @@ else
 	cp nsm nift
 endif
 
-nsm.o: nsm.cpp GitInfo.o ProjectInfo.o
+nsm.o: nsm.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-ProjectInfo.o: ProjectInfo.cpp ProjectInfo.h GitInfo.o Parser.o WatchList.o Timer.h
+ProjectInfo.o: ProjectInfo.cpp ProjectInfo.h Timer.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-GitInfo.o: GitInfo.cpp GitInfo.h ConsoleColor.o FileSystem.o
+GitInfo.o: GitInfo.cpp GitInfo.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-Parser.o: Parser.cpp Parser.h DateTimeInfo.o Expr.o ExprtkFns.o Getline.o HashTk.o LuaFns.o Lua.o Pagination.o SystemInfo.o TrackedInfo.o Variables.o 
+Parser.o: Parser.cpp Parser.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-WatchList.o: WatchList.cpp WatchList.h FileSystem.o
+WatchList.o: WatchList.cpp WatchList.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-Getline.o: Getline.cpp Getline.h ConsoleColor.o FileSystem.o Lolcat.o StrFns.o Consts.h
+Getline.o: Getline.cpp Getline.h Consts.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 Lolcat.o: Lolcat.cpp Lolcat.h FileSystem.o
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-LuaFns.o: LuaFns.cpp LuaFns.h Lua.o ConsoleColor.o ExprtkFns.o FileSystem.o Path.o Quoted.o Variables.o Consts.h
+LuaFns.o: LuaFns.cpp LuaFns.h Consts.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-Lua.o: Lua.cpp Lua.h StrFns.o LuaJIT/src/lua.hpp Lua-5.3/src/lua.hpp
+Lua.o: Lua.cpp Lua.h LuaJIT/src/lua.hpp Lua-5.3/src/lua.hpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-ExprtkFns.o: ExprtkFns.cpp ExprtkFns.h Expr.o FileSystem.o Quoted.o Variables.o Consts.h
+ExprtkFns.o: ExprtkFns.cpp ExprtkFns.h Consts.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 Expr.o: Expr.cpp Expr.h exprtk/exprtk.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-FileSystem.o: FileSystem.cpp FileSystem.h Path.o SystemInfo.o
+FileSystem.o: FileSystem.cpp FileSystem.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-Pagination.o: Pagination.cpp Pagination.h Path.o
+Pagination.o: Pagination.cpp Pagination.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 DateTimeInfo.o: DateTimeInfo.cpp DateTimeInfo.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-TrackedInfo.o: TrackedInfo.cpp TrackedInfo.h Path.o Title.o
+TrackedInfo.o: TrackedInfo.cpp TrackedInfo.h Path.o
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-Variables.o: Variables.cpp Variables.h NumFns.o Path.o StrFns.o
+Variables.o: Variables.cpp Variables.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 NumFns.o: NumFns.cpp NumFns.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-Path.o: Path.cpp Path.h ConsoleColor.o Directory.o Filename.o SystemInfo.o
+Path.o: Path.cpp Path.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 StrFns.o: StrFns.cpp StrFns.h
@@ -293,7 +293,7 @@ Filename.o: Filename.cpp Filename.h Quoted.h
 SystemInfo.o: SystemInfo.cpp SystemInfo.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-Title.o: Title.cpp Title.h ConsoleColor.o Quoted.o
+Title.o: Title.cpp Title.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 ConsoleColor.o: ConsoleColor.cpp ConsoleColor.h

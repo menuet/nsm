@@ -1773,7 +1773,7 @@ int Parser::f_read_and_process_fast(const bool& addOutput,
 
     return 0;
 }
-
+#if 1
 int Parser::read_and_process_fn(const bool& indent,
                                 const std::string& baseIndentAmount,
                                 const char& lang,
@@ -14704,7 +14704,7 @@ int Parser::read_and_process_fn(const bool& indent,
 
     return 0;
 }
-
+#endif
 void Parser::get_line(const std::string& str, std::string& restOfLine, size_t& linePos)
 {
     restOfLine = "";

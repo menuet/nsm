@@ -16593,7 +16593,9 @@ namespace exprtk
 
                if (delete_node)
                {
+#if 0
                   deleter::process((*itr).second);
+#endif
                }
 
                map.erase(itr);
@@ -23470,7 +23472,9 @@ namespace exprtk
 
          void set_default_return_type(const std::string& return_type)
          {
+#if 0
             default_return_type_ = return_type;
+#endif
          }
 
          bool verify(const std::string& param_seq, std::size_t& pseq_index)

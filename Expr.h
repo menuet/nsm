@@ -7,6 +7,14 @@
 
 #include "exprtk/exprtk.h"
 
+#if 1
+
+extern template class exprtk::symbol_table<double>;
+extern template class exprtk::expression<double>;
+extern template class exprtk::parser<double>;
+
+#endif
+
 struct Expr
 {
 	std::string expr_str;
